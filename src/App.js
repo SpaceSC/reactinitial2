@@ -19,12 +19,13 @@ const App = () => {
   }
 
   function doFetch() {
-    fetch("/api/clients?search={search}")
+    fetch(`/api/clients?search=${search}`)
     .then(res => res.json())
      .then(
       (result) => {
         setIsLoaded(true);
         setClients(result);
+        console.log(result);
       })
       
     }
@@ -34,7 +35,7 @@ const App = () => {
       <h1>Veterinarian admin - clients</h1>
       <input type="text" id="text" name="text" onInput={validate}/>
       {valid ? <button onClick={doFetch}>Search</button> : <button disabled>Search</button>}
-      {clients.map((client) => (<Client key={client.name} client={client}/>))}
+      {isLoaded && clients.map((client) => (<Client key={client.name} client={client}/>))}
 
     </div>
   )

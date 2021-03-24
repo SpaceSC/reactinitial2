@@ -1,9 +1,13 @@
 import React from 'react'
 
 function Client({client}) {
+
+  
+
+
   return (
     <div>
-      <p>clients.name</p>
+      <p>client.name</p>
     </div>
   )
 }
