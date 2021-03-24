@@ -7,7 +7,7 @@ function Client({client}) {
 
   return (
     <div>
-      <p>client.name</p>
+      <p>{client.name}</p>
     </div>
   )
 }
